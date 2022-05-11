@@ -1,5 +1,7 @@
 package com;
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 public class EnoughIsEnoughTest {
@@ -9,11 +11,10 @@ public class EnoughIsEnoughTest {
 				new int[] { 20, 37, 21 },
 				EnoughIsEnough.deleteNth( new int[] { 20, 37, 20, 21 }, 1 )
 		);
-		// assertArrayEquals(
-		// 		new int[] { 1, 1, 3, 3, 7, 2, 2, 2 },
-		// 		EnoughIsEnough.deleteNth( new int[] { 1, 1, 3, 3, 7, 2, 2, 2, 2 }, 3 )
-				
-		// );
+		assertArrayEquals(
+				new int[] { 1, 1, 3, 3, 7, 2, 2, 2 },
+				EnoughIsEnough.deleteNth( new int[] { 1, 1, 3, 3, 7, 2, 2, 2, 2 }, 3)
+		);
 		// assertArrayEquals(
 		// 		new int[] { 1, 2, 3, 1, 1, 2, 2, 3, 3, 4, 5 },
 		// 		EnoughIsEnough.deleteNth( new int[] { 1, 2, 3, 1, 1, 2, 1, 2, 3, 3, 2, 4, 5, 3, 1 }, 3 )
@@ -31,6 +32,9 @@ public class EnoughIsEnoughTest {
 	@Test
 	public void countsOccurences()
 	{
-		
+		int[] threeTwos = {2,2,2};
+		int[] numsWithFiveFours = {4,4,4,4,3,3,4};
+		assertEquals(3, EnoughIsEnough.countNumberOfTimesNumberShowsUp(2, threeTwos));
+		assertEquals(5, EnoughIsEnough.countNumberOfTimesNumberShowsUp(4, numsWithFiveFours));
 	}
 }
